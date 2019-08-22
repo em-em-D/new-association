@@ -3,11 +3,11 @@
 one:
   eventype: MyString
   location: MyString
-  date: 2019-08-22
+  date: MyString
   user: one
 
 two:
   eventype: MyString
   location: MyString
-  date: 2019-08-22
+  date: MyString
   user: two

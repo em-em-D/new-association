@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
-  get '/dashboard' => 'events#index'
+  get '/dashboard' => 'events#new'
+  get '/sign_in'  => 'sessions#new'
+  
+  root to: 'sessions#new'
 
   #get '/' => 'users#index'
   

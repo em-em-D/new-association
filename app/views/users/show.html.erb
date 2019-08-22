@@ -1,1 +1,11 @@
 <h1>List of all events created</h1>
+
+<% @events.each do |event| %>
+    <div class = "event">
+            <%= event.eventype %>
+          <%= event.location %>
+            <%= event.date %>
+    </div>
+<%end%>
+
+<%= link_to 'back', new_event_path %>

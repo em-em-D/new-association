@@ -1,13 +1,16 @@
 class EventsController < ApplicationController
     def index
-        render :index
-
+       @events = Event.all
+       
+    end
+    def new
+        @event = Event.new
     end
     
     def create
-        event = Event.new(event_params)
-        if event.save
-            redirect_to '/users/show'
+        @event = current_user.events.build(event_params)
+        if @event.save
+            redirect_to  events_path
         else
              flash[:event_creation_errors] = event.errors.full_messages
             redirect_to '/dashboard'
