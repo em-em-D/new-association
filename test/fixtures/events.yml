@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  eventname: MyString
+  eventype: MyString
   location: MyString
-  date: MyString
+  date: 2019-08-22
+  user: one
 
 two:
-  eventname: MyString
+  eventype: MyString
   location: MyString
-  date: MyString
+  date: 2019-08-22
+  user: two

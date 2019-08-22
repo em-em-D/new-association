@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    event = Event.all
   end
 
   

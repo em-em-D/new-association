@@ -1,3 +1,5 @@
 class Event < ApplicationRecord
-    has_many :users
+  belongs_to :user
+
+  has_many :users
 end
