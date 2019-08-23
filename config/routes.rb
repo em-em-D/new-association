@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'attendees/index'
+  get 'attendees/new'
+  get 'attendees/create'
+  get 'attendees/destroy'
   post '/sessions' => 'sessions#create'
   get '/dashboard' => 'events#new'
   get '/sign_in'  => 'sessions#new'
   
-  root to: 'sessions#new'
+  root to:  'sessions#new'
 
   #get '/' => 'users#index'
   
