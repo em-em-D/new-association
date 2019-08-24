@@ -1,13 +1,18 @@
 class AttendeesController < ApplicationController
-  def index
+  before_action :logged_in_user
+
+  def attend
+    @event = Event.find(params[:event_id])
+    current_user.attend @event
+    flash[:success] = 'Successfully attended event'
+    redirect_to events_path
   end
 
-  def new
+  def leave
+    @event = Event.find(params[:event_id])
+    current_user.leave @event
+    flash[:success] = 'gracefully leaved event'
+    redirect_to events_path
   end
 
-  def create
-  end
-
-  def destroy
-  end
 end

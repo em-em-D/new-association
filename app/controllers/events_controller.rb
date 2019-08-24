@@ -21,6 +21,15 @@ class EventsController < ApplicationController
     end
 
     def show
+        @event = Event.find(params[:id])
+        @attendees = @event.attendees
+    end
+
+    def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        flash[:success] = 'Event has been deleted'
+        redirect_to '/dashboard'
     end
 
     private

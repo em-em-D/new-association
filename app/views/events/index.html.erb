@@ -4,6 +4,8 @@
                 <%= event.eventype %>
               <%= event.location %>
                 <%= event.date %>
+                <%= link_to 'attend', attendees_path %> ,  <%= link_to 'delete event', '/destroy', method: :delete %>
+
         </div>
 <%end%>
 
