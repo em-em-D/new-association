@@ -9,5 +9,9 @@ class User < ApplicationRecord
     #user has (n) saved guests for the created events
     has_many :saved_attendee, through: :attendee, source: :event
 
+    validates :username, presence:true
+    validates :email, presence:true
+    
+
     
 end

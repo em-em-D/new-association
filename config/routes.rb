@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   delete '/destroy' => 'events#destroy'
   get '/sign_in'  => 'sessions#new'
 
-  post    'attendees', to: 'attendees#attend'
-  delete  'attendees', to: 'attendees#leave'
+  post    'attendees', to: 'attendees#create'
+  delete  '/destroy', to: 'attendees#delete'
   
   root to:  'sessions#new'
 

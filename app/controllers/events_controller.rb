@@ -1,9 +1,11 @@
 class EventsController < ApplicationController
     before_action :current_user, only: :destroy
-
+    
+    
     def index
-       @events = Event.all
-       
+        @events = Event.all
+        @future_events = @events.future_events
+        @past_events = @events.past_events
     end
     def new
         @event = Event.new
@@ -12,7 +14,7 @@ class EventsController < ApplicationController
     def create
         @event = current_user.events.build(event_params)
         if @event.save
-            redirect_to  events_path
+            redirect_to events_path
         else
              flash[:event_creation_errors] = event.errors.full_messages
             redirect_to '/dashboard'

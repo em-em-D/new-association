@@ -1,0 +1,13 @@
+<table>
+  <thead><th>Start_time</th><th>Title</th></thead>
+  <tbody>
+  <% @future_events.each do |event| %>
+    <tr>
+      <td><%= event.start_time%></td>
+      
+      <td>
+       <%= event.title %>
+      </td>
+    </tr>
+  </tbody>
+</table>

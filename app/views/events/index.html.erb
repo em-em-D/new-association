@@ -1,12 +1,61 @@
+<html>
+        <head>
+        </head>
+                <body><%= link_to 'back', new_event_path %>
+                <% @events.each do |event| %>
+                        <div class = "event">
+                                <%= event.eventype %>
+                                <%= event.location %>
+                                <%= event.date %>
+                                <%= link_to 'delete event', '/destroy', method: :delete %>
+                        </div>
+                <% end %>
+                <% @events.each do |event| %>
+                        <div class = "event">
+                                <%= event.eventype %>
+                                <%= event.location %>
+                                <%= event.date %>
+                                <%= link_to 'delete event', '/destroy', method: :delete %>
+                        </div>
+                <% end %>
+                <% @events.each do |event| %>
+                        <div class = "event">
+                                <%= event.eventype %>
+                                <%= event.location %>
+                                <%= event.date %>
+                                <%= link_to 'delete event', '/destroy', method: :delete %>
+                        </div>
+                <% end %>
 
-<% @events.each do |event| %>
-        <div class = "event">
-                <%= event.eventype %>
-              <%= event.location %>
-                <%= event.date %>
-                <%= link_to 'attend', attendees_path %> ,  <%= link_to 'delete event', '/destroy', method: :delete %>
+                        
 
-        </div>
-<%end%>
+                        <div class = "schedule">
+                                <% if @future_events.any? do |event|%>
+                                        <div class = "Future">
+                                                <h1> FUTURE EVENT </h1>
+                                                <%=render 'layouts/events_table' %>
+                                                <%= link_to 'attend', attendees_path %> 
+                                                <%= link_to 'delete event', '/destroy', method: :delete %>
+                                        </div>
+                                <% end %>
+                                 <%else%>
+
+                                <% @past_events.each do |events| %>
+                                        <div class = "past" >
+                                                <h1> PAST EVENT</h1>
+                                                <%=render 'layouts/past_events' %>
+                                                <%= link_to 'delete event', '/destroy', method: :delete %>
+                                        </div>
+                                 <%end%>
+                        </div>
+                       
+
+                <%= yield %>
+        </body>
+
+</html>
+
+
+
 
 <%= link_to 'back', new_event_path %>
