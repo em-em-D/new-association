@@ -1,0 +1,5 @@
+<% if @events.any? %>
+  <div class="allevents">
+    <%= render 'public/eventsList', events: @events %>
+  </div>
+<% end %>
