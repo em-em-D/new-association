@@ -1,17 +1,21 @@
 class User < ApplicationRecord
-    has_secure_password
-    has_many  :events
+    before_create :produce_token
 
-    #for those invited to the created events
-    has_many :attendee, dependent: :destroy
-
-
-    #user has (n) saved guests for the created events
-    has_many :saved_attendee, through: :attendee, source: :event
-
+    has_many :events
+    
     validates :username, presence:true
     validates :email, presence:true
     
+    def produce_token
+        self.user_token = SecureRandom.urlsafe_base64
+    end
 
+    def update_token
+        update_attribute(:user_token, user_token)
+    end
+
+    def authenticated?(token)
+        token == user_token
+    end
     
 end

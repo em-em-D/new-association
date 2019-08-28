@@ -10,19 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_23_151442) do
-
-  create_table "attendees", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_attendees_on_event_id"
-    t.index ["user_id"], name: "index_attendees_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_08_27_201921) do
 
   create_table "events", force: :cascade do |t|
     t.string "eventype"
+    t.text "description"
     t.string "location"
     t.string "date"
     t.integer "user_id"
@@ -34,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_151442) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "password_digest"
+    t.string "user_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,15 @@
+<header>
+<div class="topnav" id="myTopnav">
+ <%= link_to "private-event", root_path, class: "active" %>
+  
+   <% if sign_in? %>
+          
+              <%= link_to "home", '#' %>
+                <%= link_to "Sign out", '/logout' %>
+                <%= link_to "events to attend", '/posts' %>
+                <%= link_to "events", '/events' %>
+   
+        <% end %>
+  </div>
+</div> 
+</header>

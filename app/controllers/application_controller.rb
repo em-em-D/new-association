@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-    private
-    def current_user
-        @current_user ||=  User.find(session[:user_id]) if session[:user_id]
-    end
+    protect_from_forgery with: :null_session
 
-   
+    include SessionsHelper
+    include ApplicationHelper
+    
+
+    helper_method :signed_in?
 end

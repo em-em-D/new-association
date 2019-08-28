@@ -1,14 +1,6 @@
-Hello user
+<% @user ||= current_user %>
+<%= render 'public/header' %>
 
-<h1>create event</h1>
-<%=render 'layouts/header' %>
-
-<form  action = "/events" method = "POST">
-        <input type= "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
-        <input type= "eventype" name ="event[eventype]" placeholder="eventype">
-        <input type="location" name="event[location]" placeholder="location">
-        <input type="date" name="event[date]" placeholder="date">
-        <input type="submit" name="submit" class="submit">
-
-</form>
-
+<% provide(:button, "Create Event") %>
+<h1>Create Event</h1>
+<%= render 'Eventform' %>

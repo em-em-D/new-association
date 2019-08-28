@@ -2,12 +2,14 @@
 
 one:
   eventype: MyString
+  description: MyText
   location: MyString
   date: MyString
   user: one
 
 two:
   eventype: MyString
+  description: MyText
   location: MyString
   date: MyString
   user: two

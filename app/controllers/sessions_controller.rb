@@ -1,22 +1,22 @@
 class SessionsController < ApplicationController
+    def new
+    end
+
     def create
-        @user = User.find_by(email:login_params[:email])
-        if @user #&& user.authenticate(login_params[:password])
-            session[:user_email] = @user.email
-            redirect_to '/dashboard'
+        user = User.find_by(email:params[:session][:email].downcase)
+        if user
+            sign_in user
+            user user
+            redirect_to  '/dashboard'
         else
-            flash[:login_errors] = ['invalid information']
-            redirect_to '/'
+            flash.now[:notice] = 'Invalid credentials'
+            render :new
         end
     end
 
     def destroy
-
+        sign_out
+        redirect_to root_path
     end
 
-    private
-
-    def login_params
-       params.require(:login).permit(:email,:password, :password_confirmation)
-    end
 end
