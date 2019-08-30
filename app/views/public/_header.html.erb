@@ -5,7 +5,7 @@
    <% if sign_in? %>
           
               <%= link_to "home", '#' %>
-                <%= link_to "Sign out", '/logout' %>
+                <%= link_to "Sign out", '/logout', method: :delete %>
                 <%= link_to "events to attend", '/posts' %>
                 <%= link_to "events", '/events' %>
    

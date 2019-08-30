@@ -1,11 +1,8 @@
-
-<% @events.each do |event| %>
-    <div class = "event">
-            <%= event.eventype %><br>
-            <%= event.description %><br>
-            <%= event.location %><br>
-            <%= event.date %><br>
-            <%= link_to 'attend event', '#' %><br>
-            <%= link_to 'delete event', '/destroy', method: :delete %><br>
-    </div>
-<% end %>
+   <% @events = events  %>
+    <% if  @events.try(:any?) %>
+        <ol class = "events">
+            <% @events.try(:any?) do |event| %>
+                <%= render 'events/event'  %>
+            <% end %>
+        </ol>
+    <% end %>

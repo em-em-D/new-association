@@ -1,31 +1,34 @@
 class EventsController < ApplicationController
+  require 'attendace_controller.rb'
   #before_action :logged_in_user, only: %i[new create destroy]
   before_action :right_user, only: %i[destroy]
   def index
     @events = Event.all
     @past_events = @events.past_events
     @upcoming_events = @events.upcoming_events
+    
   end
 
   def new
-    @events = Event.new
+    @events = current_user.events.build
   end
 
   def create
-    @event = current_user.events.build(event_params)
-    if @event.save
-      flash[:success] = 'Event succeffully created'
-      redirect_to '/events'
+    @events = current_user.events.build(event_params)
+    if @events.save
+      flash[:success] = "Event succeffully created"
+      redirect_to eventlist_path
     else
-      flash[:danger] = 'Unable to create event'
-      render 'new'
+      flash.now[:error] ="Unable to create event"
+      redirect_to '/login' 
     end
   end
 
 
   def show
     @event = Event.find(params[:id])
-    #code to show users attending and event @users = @event.attendees
+    #code to show users attending and event
+     @attendees = @event.attendees
   end
 
   def destroy

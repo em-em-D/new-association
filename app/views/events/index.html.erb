@@ -1,6 +1,6 @@
-<% if @events.any? %>
+<% if @events.try(:any?) %>
   
-  <div> <h1>Upcoming Events (<%= @Upcoming_events %>)</h1></div><br>
+  <div> <h1>Upcoming Events (<%= @upcoming_events.try(:count) %>)</h1></div><br>
   <%= render 'public/eventsList', events: @Upcoming_events %><br>
   <div><h1>Past Events (<%= @past_events.count %>)</h1></div><br>
   <%= render 'public/eventsList', events:@past_events %><br>
