@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
+# :nodoc:
 Rails.application.routes.draw do
   # get 'events/index'
   # get 'events/new'
   # get 'events/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+  get '/user_path',   to: 'users#show'
   get '/signup',      to: 'users#new'
   post '/signup',     to: 'users#create'
   get '/login',       to: 'sessions#new'
@@ -20,12 +23,5 @@ Rails.application.routes.draw do
   delete  '/attendaces', to: 'attendaces#destroy'
 
   resources :users
-
-  # resources :users do
-  #   member do
-  #     get :events
-  #   end
-  # end
-
-  resources :events
+  resources :events, only: %i[index show destroy]
 end

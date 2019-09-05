@@ -1,8 +1,0 @@
-   <% @events = events  %>
-    <% if  @events.try(:any?) %>
-        <ol class = "events">
-            <% @events.try(:any?) do |event| %>
-                <%= render 'events/event'  %>
-            <% end %>
-        </ol>
-    <% end %>
