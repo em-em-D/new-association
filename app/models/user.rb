@@ -35,6 +35,14 @@ class User < ApplicationRecord
     attended_events.include? event
   end
 
+  def upcoming?
+    DateTime.parse(date).to_date&.future?
+  end
+
+  def attendee?(user)
+    attendees.include? user
+  end
+
   def attend(event)
     attended_event_ids.push event
   end

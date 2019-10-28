@@ -1,26 +1,7 @@
-<div class="user-show">
-  <div class="hosting-events-upcoming">
-    <div>
-      Events - Upcoming (<%= @events.upcoming_events.count %>)
-    </div>
-    <%= render 'public/eventstatus', events: @events.upcoming_events %>
-  </div>
-  <div class="hosting-events-past">
-    <div>
-      Hosting Events - Past (<%= @events.past_events.count %>)
-    </div>
-    <%= render 'public/eventstatus', events: @events.past_events %>
-  </div>
-  <div class="attended-events-upcoming">
-    <div>
-      Attended Events - Upcoming (<%= @attended_events.upcoming_events.count %>)
-    </div>
-    <%= render 'public/eventstatus', events: @attended_events.upcoming_events %>
-  </div>
-  <div class="attended-events-past">
-    <div>
-      Attended Events - Past (<%= @attended_events.past_events.count %>)
-    </div>
-    <%= render 'public/eventstatus', events: @attended_events.past_events %>
-  </div>
-</div>
+<h2><%= @user.username %> Events</h2>
+<ul>
+  <% @user.events.each do |event| %>
+    <%= content_tag :li, event.description %>
+    <%= render 'public/eventstatus', event: event%>
+  <% end %>
+</ul>

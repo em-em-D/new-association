@@ -5,13 +5,11 @@ class Event < ApplicationRecord
   belongs_to :user
 
   scope :upcoming_events, lambda {
-                            where('date >= ?', DateTime.current)
-                              .order(date: :asc)
+                            where('date >= ?', DateTime.current).order(date: :asc)
                           }
 
   scope :past_events, lambda {
-                        where('date < ?', DateTime.current)
-                          .order(date: :asc)
+                        where('date < ?', DateTime.current).order(date: :asc)
                       }
 
   has_many :attendaces, class_name: 'Attendace',

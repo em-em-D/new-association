@@ -23,7 +23,7 @@ class EventsController < ApplicationController
       redirect_to eventlist_path
     else
       flash.now[:error] = 'Unable to create event'
-      redirect_to '/login'
+      redirect_to events_path
     end
   end
 

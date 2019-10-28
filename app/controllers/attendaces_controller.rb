@@ -8,7 +8,7 @@ class AttendacesController < ApplicationController
     @event = Event.find(params[:event_id])
     current_user.attend @event
     flash[:success] = 'You would be attending this event'
-    redirect_back(fallback_location: @event)
+    redirect_to eventlist_path
   end
 
   def destroy

@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+michael:
+  name: Michael Example
+  email: michael@example.com
 
-one:
-  username: MyString
-  email: MyString
-  user_token: MyString
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
 
-two:
-  username: MyString
-  email: MyString
-  user_token: MyString
+luna:
+  name: Luna Kane
+  email: hands@example.gov
