@@ -14,8 +14,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
-gem 'faker', '2.1.0'
 gem 'factory_bot_rails', require: false
+gem 'faker', '2.1.0'
 # Use SCSS for stylesheets
 gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.11'
