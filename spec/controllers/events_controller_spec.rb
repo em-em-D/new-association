@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
 # :nodoc:
-require 'test_helper'
 class EventsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get events_index_url

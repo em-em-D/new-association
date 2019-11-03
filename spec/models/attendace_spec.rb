@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require 'rails_helper'
 # :nodoc:
-class AttendaceControllerTest < ActionDispatch::IntegrationTest
+class AttendaceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

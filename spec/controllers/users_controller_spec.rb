@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
 # :nodoc:
-require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should get new' do
     get user_new_url
