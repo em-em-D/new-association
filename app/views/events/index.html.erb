@@ -1,5 +1,20 @@
-<% if @events.any? %>
-  <div class="allevents">
-    <%= render 'public/eventsList', events: @events %>
-  </div>
+
+<% @events %>
+<h1> upcoming_events (<%= @upcoming_events.count %>)</h1>
+<% @upcoming_events.each do |event| %><br>
+  <%= event.eventype %><br>
+  <%= event.description %><br>
+  <%= event.location %><br>
+  <%= event.date %><br>
+      <%= render 'public/eventstatus', event: event %>
 <% end %>
+
+<h1> past_events (<%= @past_events.count %>)</h1>
+<% @past_events.each do |event| %><br>
+  <%= event.eventype %><br>
+  <%= event.description %><br>
+  <%= event.location %><br>
+  <%= event.date %><br>
+      <%= render 'public/eventstatus', event: event %>
+<% end %>
+

@@ -1,4 +1,7 @@
 <% @user ||= current_user %>
+<%= render 'public/header' %>
+
 <% provide(:button, "Create Event") %>
-<h1>Create Event</h1>
+<div id ="gift"><h1> Publish your event !</h1></div>
 <%= render 'Eventform' %>
+

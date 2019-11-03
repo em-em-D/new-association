@@ -1,0 +1,11 @@
+<% @user = current_user %>
+<% @event = event %>
+<% if @user &.event? @event %>
+    <%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, class: "action-btn" %>
+    <% end %>
+<% if @user &.attended_event? @event %>
+    <%= link_to 'Leave',  attendaces_path(event_id: @event.id), method: :delete, data: {confirm: "Leave this event?" }, class: "action-btn" %>
+<% end %>
+<% if @event.upcoming? %>
+    <%= link_to 'Attend', attendaces_path(event_id: @event.id), method: :post, data: {confirm: "Attend this event?" }, class: "action-btn" %>
+<% end %>

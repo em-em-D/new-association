@@ -1,5 +1,5 @@
 
-<%= form_for @events do |f| %>
+<%= form_for(@event , url: '/events', method: :post) do |f| %>
     <%= f.label :eventype %>
     <%= f.text_field :eventype, class: "form-control" %>
 
@@ -14,4 +14,6 @@
 
     
     <%= f.submit yield(:button), class: "btn btn-primary" %>
+
 <% end %>
+   

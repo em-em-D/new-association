@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+michael:
+  name: Michael Example
+  email: michael@example.com
+
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
+
+luna:
+  name: Luna Kane
+  email: hands@example.gov
