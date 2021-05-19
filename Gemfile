@@ -18,7 +18,7 @@ gem 'factory_bot_rails', require: false
 gem 'faker', '2.1.0'
 # Use SCSS for stylesheets
 gem 'jbuilder', '~> 2.5'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Use Uglifier as compressor for JavaScript assets
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
